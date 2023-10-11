@@ -12,6 +12,8 @@ from dash import Dash, html, dcc, Input, Output
 
 app = Dash(__name__)   # make an instance of the dashboard application
 
+server = app.server
+
 # specify the layout of the dashboard
 app.layout = html.Div([
     html.H1(children=["Bicycle traffic dashboard"]),
@@ -79,4 +81,4 @@ def update_figure(start_date, end_date, data_res_value):
 
 if __name__ == '__main__':
 
-    app.run(jupyter_mode='external', debug=True)
+    app.run(jupyter_mode='external', debug=True, port=8051)
